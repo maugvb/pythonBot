@@ -5,6 +5,7 @@ import config
 
 
 api_key = config.api_key
+guild_id = config.guild_id
 
 #Command type: >test
 intents = discord.Intents.default()
@@ -19,7 +20,7 @@ async def on_ready():
     print("BotReady")
     #users = discord.Guild.users
     roles = discord.Guild.roles
-    guild = bot.get_guild(id=882606921780199475)
+    guild = bot.get_guild(id=guild_id)
     members = guild.members
     print(guild.roles)
     async for member in guild.fetch_members(limit=150):
