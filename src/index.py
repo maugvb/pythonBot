@@ -24,9 +24,9 @@ async def on_ready():
     members = guild.members
     print(guild.roles)
     async for member in guild.fetch_members(limit=150):
-        if member.name != 'PisoBot' and list(guild.roles)[1] in member.roles:
+        if not member.bot  and list(guild.roles)[1] in member.roles:
             print(member.name)
-            print(list(guild.roles)[1].name)
+            print(member.roles)
 
 
 
